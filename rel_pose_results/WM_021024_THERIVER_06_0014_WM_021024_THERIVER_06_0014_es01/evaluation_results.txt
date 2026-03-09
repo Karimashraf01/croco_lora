@@ -1,0 +1,26 @@
+Video: WM_021024_THERIVER_06_0014_WM_021024_THERIVER_06_0014_es01   | Using LoRA: False
+Loaded pairs: 3
+Camera matrix:
+ [[2.74285714e+03 0.00000000e+00 9.60000000e+02]
+ [0.00000000e+00 2.74285714e+03 5.40000000e+02]
+ [0.00000000e+00 0.00000000e+00 1.00000000e+00]]
+frames/img_000000.jpg -> frames/img_000030.jpg | matches=95 | rot=0.85° | trans=62.50°
+frames/img_000030.jpg -> frames/img_000060.jpg | matches=116 | rot=0.40° | trans=63.03°
+frames/img_000060.jpg -> frames/img_000090.jpg | matches=131 | rot=0.55° | trans=63.39°
+
+===== FINAL RESULTS =====
+Pairs evaluated: 3
+
+Rotation Error Statistics
+Mean   : 0.5995509638021431
+Median : 0.5461934146676687
+Std    : 0.1878801715660375
+
+Translation Error Statistics
+Mean   : 62.97646102849949
+Median : 63.03210211065576
+Std    : 0.36460435834281274
+
+Matching Statistics
+Avg Matches : 114.0
+Saved histogram figure to rel_pose_results\WM_021024_THERIVER_06_0014_WM_021024_THERIVER_06_0014_es01\pose_error_histograms.png

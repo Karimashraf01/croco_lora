@@ -1,0 +1,27 @@
+Video: c1dwee7v81b5don4ak86vtcu_512   | Using LoRA: False
+Loaded pairs: 5
+Camera matrix:
+ [[1.11632575e+03 0.00000000e+00 6.40000000e+02]
+ [0.00000000e+00 1.11632575e+03 3.60000000e+02]
+ [0.00000000e+00 0.00000000e+00 1.00000000e+00]]
+frames/img_000000.jpg -> frames/img_000030.jpg | matches=119 | rot=0.31° | trans=nan°
+frames/img_000030.jpg -> frames/img_000060.jpg | matches=144 | rot=0.06° | trans=nan°
+frames/img_000060.jpg -> frames/img_000090.jpg | matches=138 | rot=0.00° | trans=nan°
+frames/img_000090.jpg -> frames/img_000120.jpg | matches=134 | rot=0.01° | trans=nan°
+frames/img_000120.jpg -> frames/img_000150.jpg | matches=138 | rot=0.00° | trans=nan°
+
+===== FINAL RESULTS =====
+Pairs evaluated: 5
+
+Rotation Error Statistics
+Mean   : 0.07598400912799198
+Median : 0.005269283170548533
+Std    : 0.1191190777544213
+
+Translation Error Statistics
+Mean   : nan
+Median : nan
+Std    : nan
+
+Matching Statistics
+Avg Matches : 134.6

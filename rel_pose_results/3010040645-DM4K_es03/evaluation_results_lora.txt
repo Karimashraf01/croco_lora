@@ -1,0 +1,29 @@
+Video: 3010040645-DM4K_es03   | Using LoRA: True
+Loaded pairs: 6
+Camera matrix:
+ [[2.74059396e+03 0.00000000e+00 1.92000000e+03]
+ [0.00000000e+00 2.74059396e+03 1.08000000e+03]
+ [0.00000000e+00 0.00000000e+00 1.00000000e+00]]
+frames/img_000000.jpg -> frames/img_000030.jpg | matches=105 | rot=0.11° | trans=54.87°
+frames/img_000030.jpg -> frames/img_000060.jpg | matches=91 | rot=0.10° | trans=53.83°
+frames/img_000060.jpg -> frames/img_000090.jpg | matches=87 | rot=0.10° | trans=54.56°
+frames/img_000090.jpg -> frames/img_000120.jpg | matches=81 | rot=0.06° | trans=56.07°
+frames/img_000120.jpg -> frames/img_000150.jpg | matches=82 | rot=0.08° | trans=54.85°
+frames/img_000150.jpg -> frames/img_000180.jpg | matches=76 | rot=0.08° | trans=55.22°
+
+===== FINAL RESULTS =====
+Pairs evaluated: 6
+
+Rotation Error Statistics
+Mean   : 0.08893841796515799
+Median : 0.09286776390562082
+Std    : 0.016348231108103267
+
+Translation Error Statistics
+Mean   : 54.89861061800445
+Median : 54.862232426510346
+Std    : 0.6756279906606721
+
+Matching Statistics
+Avg Matches : 87.0
+Saved histogram figure to rel_pose_results\3010040645-DM4K_es03\pose_error_histograms_lora.png

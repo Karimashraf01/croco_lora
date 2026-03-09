@@ -6,6 +6,9 @@ from models.croco import CroCoNet
 from PIL import Image
 import torchvision.transforms
 from torchvision.transforms import ToTensor, Normalize, Compose
+import torch.nn.functional as F
+from models.criterion import MaskedMSE
+from torchmetrics.functional import structural_similarity_index_measure as ssim
 
 def main():
     device = torch.device('cuda:0' if torch.cuda.is_available() and torch.cuda.device_count()>0 else 'cpu')
@@ -50,6 +53,29 @@ def main():
     visualization.save(fname)
     print('Visualization save in '+fname)
     
+    criterion = MaskedMSE(norm_pix_loss=True)
+    loss = criterion(out, mask, target)
+    
+    # MSE in image space
+    mse = F.mse_loss(decoded_image, image1)
+    # PSNR
+    psnr = 10 * torch.log10(1.0 / mse)
 
+    print("MaskedMSE Loss:", loss.item())
+    print("Image MSE:", mse.item())
+    print("PSNR:", psnr.item(), "dB")
+
+    
+    ssim_value = ssim(decoded_image, image1, data_range=1.0)
+    print("SSIM:", ssim_value.item())
+    # make visualization
+    visualization = torch.cat((ref_image, masked_input_image, decoded_image, input_image), dim=3) # 4*(B, 3, H, W) -> B, 3, H, W*4
+    B, C, H, W = visualization.shape
+    visualization = visualization.permute(1, 0, 2, 3).reshape(C, B*H, W)
+    visualization = torchvision.transforms.functional.to_pil_image(torch.clamp(visualization, 0, 1))
+    fname = "demo_output.png"
+    visualization.save(fname)
+    print('Visualization save in '+fname)
+    
 if __name__=="__main__":
     main()

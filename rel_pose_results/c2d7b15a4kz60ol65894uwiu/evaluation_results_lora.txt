@@ -1,0 +1,26 @@
+Video: c2d7b15a4kz60ol65894uwiu   | Using LoRA: True
+Loaded pairs: 3
+Camera matrix:
+ [[1.72849459e+03 0.00000000e+00 9.60000000e+02]
+ [0.00000000e+00 1.72849459e+03 5.40000000e+02]
+ [0.00000000e+00 0.00000000e+00 1.00000000e+00]]
+frames/img_000000.jpg -> frames/img_000030.jpg | matches=89 | rot=0.08° | trans=59.36°
+frames/img_000030.jpg -> frames/img_000060.jpg | matches=97 | rot=0.10° | trans=59.23°
+frames/img_000060.jpg -> frames/img_000090.jpg | matches=96 | rot=0.09° | trans=69.85°
+
+===== FINAL RESULTS =====
+Pairs evaluated: 3
+
+Rotation Error Statistics
+Mean   : 0.0906886878690197
+Median : 0.08659438015169485
+Std    : 0.009101934949689007
+
+Translation Error Statistics
+Mean   : 62.814687515515914
+Median : 59.36391134263644
+Std    : 4.972404577856656
+
+Matching Statistics
+Avg Matches : 94.0
+Saved histogram figure to rel_pose_results\c2d7b15a4kz60ol65894uwiu\pose_error_histograms_lora.png

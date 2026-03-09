@@ -1,0 +1,27 @@
+Video: c8jka0cpama5ykz5ybc6aj3u   | Using LoRA: True
+Loaded pairs: 4
+Camera matrix:
+ [[2.41371429e+03 0.00000000e+00 1.92000000e+03]
+ [0.00000000e+00 2.41371429e+03 1.08000000e+03]
+ [0.00000000e+00 0.00000000e+00 1.00000000e+00]]
+frames/img_000000.jpg -> frames/img_000030.jpg | matches=118 | rot=0.05° | trans=54.74°
+frames/img_000030.jpg -> frames/img_000060.jpg | matches=109 | rot=0.03° | trans=34.38°
+frames/img_000060.jpg -> frames/img_000090.jpg | matches=104 | rot=0.02° | trans=55.21°
+frames/img_000090.jpg -> frames/img_000120.jpg | matches=106 | rot=0.01° | trans=84.78°
+
+===== FINAL RESULTS =====
+Pairs evaluated: 4
+
+Rotation Error Statistics
+Mean   : 0.027421957623882193
+Median : 0.023416111095639187
+Std    : 0.014606541849834403
+
+Translation Error Statistics
+Mean   : 57.279164527308886
+Median : 54.978252867744985
+Std    : 17.96858747264143
+
+Matching Statistics
+Avg Matches : 109.25
+Saved histogram figure to rel_pose_results\c8jka0cpama5ykz5ybc6aj3u\pose_error_histograms_lora.png

@@ -1,0 +1,26 @@
+Video: 00444043_ES05   | Using LoRA: True
+Loaded pairs: 3
+Camera matrix:
+ [[1.28987601e+03 0.00000000e+00 9.60000000e+02]
+ [0.00000000e+00 1.28987601e+03 5.40000000e+02]
+ [0.00000000e+00 0.00000000e+00 1.00000000e+00]]
+frames/img_000000.jpg -> frames/img_000030.jpg | matches=64 | rot=2.27° | trans=41.42°
+frames/img_000030.jpg -> frames/img_000060.jpg | matches=58 | rot=2.06° | trans=35.34°
+frames/img_000060.jpg -> frames/img_000090.jpg | matches=44 | rot=2.00° | trans=31.46°
+
+===== FINAL RESULTS =====
+Pairs evaluated: 3
+
+Rotation Error Statistics
+Mean   : 2.1139760809072765
+Median : 2.064878260836979
+Std    : 0.11661839822916484
+
+Translation Error Statistics
+Mean   : 36.073300712904846
+Median : 35.33917897263811
+Std    : 4.09898959856318
+
+Matching Statistics
+Avg Matches : 55.333333333333336
+Saved histogram figure to rel_pose_results\00444043_ES05\pose_error_histograms_lora.png

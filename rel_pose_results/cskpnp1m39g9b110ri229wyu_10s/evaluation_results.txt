@@ -1,0 +1,43 @@
+Video: cskpnp1m39g9b110ri229wyu_10s   | Using LoRA: False
+Loaded pairs: 20
+Camera matrix:
+ [[2.08457143e+03 0.00000000e+00 9.60000000e+02]
+ [0.00000000e+00 2.08457143e+03 5.40000000e+02]
+ [0.00000000e+00 0.00000000e+00 1.00000000e+00]]
+frames/img_000000.jpg -> frames/img_000030.jpg | matches=134 | rot=0.05° | trans=82.90°
+frames/img_000030.jpg -> frames/img_000060.jpg | matches=142 | rot=0.09° | trans=45.24°
+frames/img_000060.jpg -> frames/img_000090.jpg | matches=159 | rot=0.04° | trans=74.80°
+frames/img_000090.jpg -> frames/img_000120.jpg | matches=167 | rot=0.16° | trans=84.08°
+frames/img_000120.jpg -> frames/img_000150.jpg | matches=160 | rot=0.21° | trans=81.02°
+frames/img_000150.jpg -> frames/img_000180.jpg | matches=101 | rot=0.54° | trans=55.07°
+frames/img_000180.jpg -> frames/img_000210.jpg | matches=80 | rot=0.61° | trans=55.16°
+frames/img_000210.jpg -> frames/img_000240.jpg | matches=97 | rot=0.66° | trans=76.32°
+frames/img_000240.jpg -> frames/img_000270.jpg | matches=129 | rot=0.53° | trans=67.44°
+frames/img_000270.jpg -> frames/img_000300.jpg | matches=172 | rot=0.40° | trans=59.59°
+frames/img_000300.jpg -> frames/img_000330.jpg | matches=173 | rot=0.22° | trans=64.37°
+frames/img_000330.jpg -> frames/img_000360.jpg | matches=158 | rot=0.14° | trans=70.30°
+frames/img_000360.jpg -> frames/img_000390.jpg | matches=148 | rot=0.08° | trans=44.11°
+frames/img_000390.jpg -> frames/img_000420.jpg | matches=160 | rot=0.06° | trans=71.23°
+frames/img_000420.jpg -> frames/img_000450.jpg | matches=176 | rot=0.00° | trans=20.53°
+frames/img_000450.jpg -> frames/img_000480.jpg | matches=196 | rot=0.08° | trans=69.39°
+frames/img_000480.jpg -> frames/img_000510.jpg | matches=196 | rot=0.08° | trans=46.77°
+frames/img_000510.jpg -> frames/img_000540.jpg | matches=196 | rot=0.07° | trans=77.05°
+frames/img_000540.jpg -> frames/img_000570.jpg | matches=188 | rot=0.04° | trans=67.07°
+frames/img_000570.jpg -> frames/img_000600.jpg | matches=176 | rot=0.03° | trans=35.85°
+
+===== FINAL RESULTS =====
+Pairs evaluated: 20
+
+Rotation Error Statistics
+Mean   : 0.2053242514348465
+Median : 0.08649814780282725
+Std    : 0.21066301040228283
+
+Translation Error Statistics
+Mean   : 62.41453869442755
+Median : 67.25622052762449
+Std    : 16.561202074492122
+
+Matching Statistics
+Avg Matches : 155.4
+Saved histogram figure to rel_pose_results\cskpnp1m39g9b110ri229wyu_10s\pose_error_histograms.png

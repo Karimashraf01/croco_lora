@@ -16,7 +16,7 @@ from functools import partial
 from models.blocks import Block, DecoderBlock, PatchEmbed
 from models.pos_embed import get_2d_sincos_pos_embed, RoPE2D 
 from models.masking import RandomMask
-
+from models.lora import LoRALinear
 
 class CroCoNet(nn.Module):
 
@@ -104,6 +104,62 @@ class CroCoNet(nn.Module):
         # final norm layer 
         self.dec_norm = norm_layer(dec_embed_dim)
         
+    def _lora_on_enc_blocks(self, r=8, alpha=16, dropout=0.1, qkv_only=True, number_of_blocks_to_modify=-1):
+
+        blocks = self.enc_blocks if number_of_blocks_to_modify == -1 else self.enc_blocks[:number_of_blocks_to_modify]
+
+        for blk in blocks:
+            blk.attn.qkv = LoRALinear(
+                blk.attn.qkv,
+                r=r,
+                alpha=alpha,
+                dropout=dropout
+            )
+        if not qkv_only:
+            blk.attn.proj = LoRALinear(
+                blk.attn.proj,
+                r=r,
+                alpha=alpha,
+                dropout=dropout
+            )
+    def _lora_on_dec_blocks(self, r=8, alpha=16, dropout=0.1,qkv_only= True, number_of_blocks_to_modify=-1):
+
+        blocks = self.dec_blocks if number_of_blocks_to_modify == -1 else self.dec_blocks[:number_of_blocks_to_modify]
+
+        for blk in blocks:
+            blk.attn.qkv = LoRALinear(
+                blk.attn.qkv,
+                r=r,
+                alpha=alpha,
+                dropout=dropout
+            )
+        if not qkv_only:
+            blk.attn.proj = LoRALinear(
+                blk.attn.proj,
+                r=r,
+                alpha=alpha,
+                dropout=dropout
+            )
+    def _unfreeze_LoRA_parameters(self):
+
+        for blk in self.enc_blocks:
+            if hasattr(blk.attn.qkv, "A"):
+                blk.attn.qkv.A.requires_grad = True
+                blk.attn.qkv.B.requires_grad = True
+
+            if hasattr(blk.attn.proj, "A"):
+                blk.attn.proj.A.requires_grad = True
+                blk.attn.proj.B.requires_grad = True
+
+        for blk in self.dec_blocks:
+            if hasattr(blk.attn.qkv, "A"):
+                blk.attn.qkv.A.requires_grad = True
+                blk.attn.qkv.B.requires_grad = True
+
+            if hasattr(blk.attn.proj, "A"):
+                blk.attn.proj.A.requires_grad = True
+                blk.attn.proj.B.requires_grad = True
+
     def _set_prediction_head(self, dec_embed_dim, patch_size):
          self.prediction_head = nn.Linear(dec_embed_dim, patch_size**2 * 3, bias=True)
         
