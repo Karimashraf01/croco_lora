@@ -1,3 +1,4 @@
+import argparse
 import os
 import random
 import cv2
@@ -144,15 +145,25 @@ def _save_visualization_sample(pairs, output_path, num_samples):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Generate sequential CroCo pairs from images.")
+    parser.add_argument("--images_dir", type=str, required=True, help="Directory containing images.")
+    parser.add_argument("--output_txt", type=str, required=True, help="Path to save the pairs file.")
+    parser.add_argument("--reverse_percentage", type=float, default=30.0, help="Percentage of pairs to reverse (0-100).")
+    parser.add_argument("--full_paths", action="store_true",default=True, help="Write full paths instead of filenames.")
+    parser.add_argument("--save_viz_sample", action="store_true",default=True, help="Save a visualization sample of pairs.")
+    parser.add_argument("--viz_output_path", type=str, default="pairs_visualization.jpg", help="Output path for visualization image.")
+    parser.add_argument("--num_viz_samples", type=int, default=10, help="Number of pairs to visualize in the sample.")
+    args = parser.parse_args()
+
     generate_sequential_pairs(
-    images_dir="New_drone_dataset\VisDrone2019-DET-test-dev\images",
-    output_txt="New_drone_dataset/croco_pairs_test_dev.txt",
-    reverse_percentage=30,  # add reverse for 30% of pairs
-    full_paths=True,
-    save_viz_sample=True,
-    viz_output_path="New_drone_dataset/viz_sample_test_dev.jpg",
-)
-    
+        images_dir=args.images_dir,
+        output_txt=args.output_txt,
+        reverse_percentage=args.reverse_percentage,
+        full_paths=args.full_paths,
+        save_viz_sample=args.save_viz_sample,
+        viz_output_path=args.viz_output_path,
+        num_viz_samples=args.num_viz_samples,)
+
 
 ## todo: 
 # check lighting conditiions

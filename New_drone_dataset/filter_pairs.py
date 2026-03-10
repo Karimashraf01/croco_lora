@@ -1,3 +1,5 @@
+import argparse
+
 import torch
 import torch.nn.functional as F
 from PIL import Image
@@ -32,7 +34,10 @@ def load_image(path):
 
 
 if __name__ == "__main__":
-    pairs_txt = "New_drone_dataset\\croco_pairs_test_dev.txt"
+    parser = argparse.ArgumentParser(description="Filter CroCo pairs based on descriptor similarity.")
+    parser.add_argument("--pairs_txt", type=str, required=True, help="Path to the text file containing image pairs.")
+    args = parser.parse_args()
+    pairs_txt = args.pairs_txt
     counter = 0
     with open(pairs_txt, "r") as f:
         pairs = [line.strip().split() for line in f.readlines()]
